@@ -2,7 +2,7 @@ package bibliotheque;
 
 public class Lion extends Animal{
 
-    public Lion(String nom) {
+    public Lion(String nom, int age) {
         super(nom);
     }
 

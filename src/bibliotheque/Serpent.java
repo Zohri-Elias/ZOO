@@ -2,7 +2,7 @@ package bibliotheque;
 
 public class Serpent extends Animal{
 
-    public Serpent(String nom) {
+    public Serpent(String nom, int age) {
         super(nom);
     }
 
