@@ -27,6 +27,8 @@ public class Zoo {
     public void vendreBillet(Visiteur v) {
         v.acheterBillet();
         caisses += (v.getAge() < 16) ? 10 : 20;
+        listeVisiteurs.add(v);
+        System.out.println("Billet vendu à " + v.getNom());
     }
 
     public List<Soigneur> getListeSoigneurs() {
