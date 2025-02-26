@@ -109,8 +109,40 @@ class ZooApp {
     public static void supprimerAnimal() {
         System.out.print("Nom de l'animal : ");
         String nom = scanner.nextLine();
+        System.out.print("Âge de l'animal : ");
+        int age = scanner.nextInt();
         scanner.nextLine();
-// faire ceci
+
+        System.out.print("Type de l'animal (Lion/Oiseau/Serpent) : ");
+        String type = scanner.nextLine();
+
+        Animal animal;
+        switch (type.toLowerCase()) {
+            case "lion":
+                animal = new Lion(nom, age);
+                break;
+            case "oiseau":
+                animal = new Oiseau(nom, age);
+                break;
+            case "serpent":
+                animal = new Serpent(nom, age);
+                break;
+            default:
+                System.out.println("Type d'animal non reconnu.");
+                return;
+        }
+
+        System.out.print("ID de l'enclos : ");
+        int idEnclos = scanner.nextInt();
+        scanner.nextLine();
+
+        Enclos enclos = trouverEnclosParId(idEnclos);
+        if (enclos != null) {
+            enclos.supprimerAnimal(animal);
+            System.out.println(nom + " a été supprimé de l'enclos " + idEnclos);
+        } else {
+            System.out.println("Enclos non trouvé.");
+        }
     }
 
     private static void ajouterSoigneur() {

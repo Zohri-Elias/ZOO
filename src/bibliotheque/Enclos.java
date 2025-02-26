@@ -25,6 +25,15 @@ public class Enclos {
         }
     }
 
+    public void supprimerAnimal(Animal a) {
+        if (listeAnimaux.size() < capaciteMax) {
+            listeAnimaux.remove(a);
+            System.out.println(a.getNom() + " a été supprime de l'enclos " + id);
+        } else {
+            System.out.println("L'enclos " + id + " est vide.");
+        }
+    }
+
     public void retirerAnimal(Animal a) {
         listeAnimaux.remove(a);
         System.out.println(a.getNom() + " a été retiré de l'enclos " + id);
@@ -56,4 +65,5 @@ public class Enclos {
     public void setListeAnimaux(List<Animal> listeAnimaux) {
         this.listeAnimaux = listeAnimaux;
     }
+
 }
